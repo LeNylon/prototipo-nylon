@@ -1,10 +1,9 @@
-import temporizador from "./components/temporizador";
+import Temporizador from "./components/temporizador";
 
 export default function Home() {
   return (
-    <div>
-      <h1>Mi Pomodoro</h1>
-      <temporizador tiempoEstudio={25} tiempoDescanso={5} />
+    <div className="pagina">
+      <Temporizador tiempoEstudio={25} tiempoDescanso={5} />
     </div>
   );
 }

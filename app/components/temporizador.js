@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-export default function temporizador({ tiempoEstudio, tiempoDescanso }) {
+export default function Temporizador({ tiempoEstudio, tiempoDescanso }) {
 
     const [segundos, setSegundos] = useState(tiempoEstudio * 60);
     const [activo, setActivo] = useState(false);
@@ -34,7 +34,7 @@ export default function temporizador({ tiempoEstudio, tiempoDescanso }) {
     const segundosRestantes = segundos % 60;
 
     return (
-        <div>
+        <div className="temporizador">
             <h2>
                 {descanso ? "Descanso" : "Estudio"}
             </h2>
@@ -43,18 +43,19 @@ export default function temporizador({ tiempoEstudio, tiempoDescanso }) {
                 {String(minutos).padStart(2, "0")}:
                 {String(segundosRestantes).padStart(2, "0")}
             </h1>
+            <div className="botones">
+                <button onClick={() => setActivo(!activo)}>
+                    {activo ? "Pausar" : "Iniciar"}
+                </button>
 
-            <button onClick={() => setActivo(!activo)}>
-                {activo ? "Pausar" : "Iniciar"}
-            </button>
-
-            <button onClick={() => {
-                setActivo(false);
-                setDescanso(false);
-                setSegundos(tiempoEstudio * 60);
-            }}>
-                Reiniciar
-            </button>
+                <button onClick={() => {
+                    setActivo(false);
+                    setDescanso(false);
+                    setSegundos(tiempoEstudio * 60);
+                }}>
+                    Reiniciar
+                </button>
+            </div>
         </div>
     );
 
