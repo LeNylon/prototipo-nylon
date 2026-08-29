@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-export default function Temporizador({ tiempoEstudio, tiempoDescanso, onCambiarTiempos }) {
+export default function Temporizador({ tiempoEstudio, tiempoDescanso, onCambiarTiempos, musica }) {
 
     const [segundos, setSegundos] = useState(tiempoEstudio * 60);
     const [activo, setActivo] = useState(false);
@@ -61,7 +61,7 @@ export default function Temporizador({ tiempoEstudio, tiempoDescanso, onCambiarT
                 <button onClick={onCambiarTiempos}>
                     Cambiar tiempos
                 </button>
-
+                {musica}
             </div>
 
         </div>
