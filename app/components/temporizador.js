@@ -35,14 +35,15 @@ export default function Temporizador({ tiempoEstudio, tiempoDescanso, onCambiarT
 
     return (
         <div className="temporizador">
-            <h2>
-                {descanso ? "Descanso" : "Estudio"}
-            </h2>
-
+        
             <h1>
                 {String(minutos).padStart(2, "0")}:
                 {String(segundosRestantes).padStart(2, "0")}
             </h1>
+
+            <h2>
+                {descanso ? "Descanso" : "Estudio"}
+            </h2>
             <div className="botones">
 
                 <button onClick={() => setActivo(!activo)}>
