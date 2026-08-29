@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Musica from "./musica";
 
 export default function Temporizador({ tiempoEstudio, tiempoDescanso, onCambiarTiempos }) {
 
@@ -35,7 +36,7 @@ export default function Temporizador({ tiempoEstudio, tiempoDescanso, onCambiarT
 
     return (
         <div className="temporizador">
-        
+
             <h1>
                 {String(minutos).padStart(2, "0")}:
                 {String(segundosRestantes).padStart(2, "0")}
@@ -63,6 +64,9 @@ export default function Temporizador({ tiempoEstudio, tiempoDescanso, onCambiarT
                 </button>
 
             </div>
+
+            <Musica opcionMusica="/musica.mp3" />
+
         </div>
     );
 
