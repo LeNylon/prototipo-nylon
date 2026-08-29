@@ -7,18 +7,19 @@ export default function Musica({opcionMusica}) {
     const [reproduciendo, setReproduciendo] = useState(false);
 
     const cambiarMusica = () => {
-        if (!audio.current || audio.current.src !== opcionMusica) {
+
+        if (!audio.current) {
             audio.current = new Audio(opcionMusica);
             audio.current.loop = true;
         }
 
         if (reproduciendo) {
             audio.current.pause();
+            setReproduciendo(false);
         } else {
             audio.current.play();
+            setReproduciendo(true);
         }
-
-        setReproduciendo(!reproduciendo);
     };
 
     return (
