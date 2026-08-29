@@ -61,7 +61,6 @@ export default function Temporizador({ tiempoEstudio, tiempoDescanso, onCambiarT
                 <button onClick={onCambiarTiempos}>
                     Cambiar tiempos
                 </button>
-                {musica}
             </div>
 
         </div>
