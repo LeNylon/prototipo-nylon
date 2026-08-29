@@ -8,7 +8,7 @@ export default function Home() {
   const [tiempoEstudio, setTiempoEstudio] = useState("");
   const [tiempoDescanso, setTiempoDescanso] = useState("");
   const [iniciado, setIniciado] = useState(false);
-  const reproductorMusica = <Musica opcionMusica="/music/musica.mp3" />;
+
   return (
     <div className="pagina">
 
@@ -43,18 +43,22 @@ export default function Home() {
             Iniciar
           </button>
 
+          
+
         </div>
       ) : (
-        <Temporizador
-          tiempoEstudio={Number(tiempoEstudio)}
-          tiempoDescanso={Number(tiempoDescanso)}
-          onCambiarTiempos={() => setIniciado(false)}
-          musica={reproductorMusica}
-        />
+        <div className="contenedorTemporizador">
+          <Temporizador
+            tiempoEstudio={Number(tiempoEstudio)}
+            tiempoDescanso={Number(tiempoDescanso)}
+            onCambiarTiempos={() => setIniciado(false)}
+          />
+          <Musica opcionMusica="/musica.mp3" />
+        </div>
       )}
 
-      <Musica opcionMusica="/musica.mp3" />
 
+    
     </div>
   );
 }

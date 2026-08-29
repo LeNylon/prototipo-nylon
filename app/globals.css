@@ -2,6 +2,7 @@
   --background: #171717;
   --foreground: #ffffff;
 }
+
 .pagina {
   display: flex;
   justify-content: center;
@@ -15,10 +16,17 @@
   gap: 10px;
 }
 
+.contenedorTemporizador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .temporizador {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .temporizador h1 {
@@ -29,4 +37,10 @@
 .temporizador h2 {
   font-size: 30px;
   margin-top: -5px;
+}
+
+.musica {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }

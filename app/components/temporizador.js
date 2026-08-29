@@ -44,6 +44,7 @@ export default function Temporizador({ tiempoEstudio, tiempoDescanso, onCambiarT
             <h2>
                 {descanso ? "Descanso" : "Estudio"}
             </h2>
+            
             <div className="botones">
 
                 <button onClick={() => setActivo(!activo)}>
@@ -62,7 +63,9 @@ export default function Temporizador({ tiempoEstudio, tiempoDescanso, onCambiarT
                     Cambiar tiempos
                 </button>
             </div>
-
+            <div className="musica">
+                {musica}
+            </div>
         </div>
     );
 
