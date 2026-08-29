@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Temporizador from "./components/temporizador";
+import Musica from "./components/musica";
 
 export default function Home() {
   const [tiempoEstudio, setTiempoEstudio] = useState("");
@@ -41,6 +42,9 @@ export default function Home() {
           >
             Iniciar
           </button>
+
+          <Musica opcionMusica="/musica.mp3" />
+
         </div>
       ) : (
         <Temporizador
